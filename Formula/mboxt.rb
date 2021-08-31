@@ -36,11 +36,12 @@ class Mboxt < Formula
 
   def caveats
     s = <<~EOS
+      \e[33mPlease restart the terminal\e[0m.
       Use 'mboxt --help' or 'mboxt [command] --help' to display help information about the command.
     EOS
     s += "mboxt only supports macOS version ≥ 15.0 (Catalina)" if MacOS.version < :catalina
     s
-  ends
+  end
 
   test do
     assert_match "CLI Core Version", shell_output("mboxt --version --no-launcher").strip
